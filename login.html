@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>สำหรับเจ้าหน้าที่</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+<style>
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .keypad button {
+      font-size: 20px;
+      padding: 15px;
+    }
+    #pin-display {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 10px;
+      letter-spacing: 5px;
+    }
+  </style>
+  <script>
+    let pin = "";
+
+    function pressKey(num) {
+      if (pin.length < 4) {
+        pin += num;
+        document.getElementById("pin-display").textContent = "*".repeat(pin.length);
+      }
+
+      if (pin === "1234") {
+        window.location.href = "budget.html";
+      } else if (pin.length === 4) {
+        alert("รหัสไม่ถูกต้อง");
+        pin = "";
+        document.getElementById("pin-display").textContent = "";
+      }
+    }
+
+    function clearPin() {
+      pin = "";
+      document.getElementById("pin-display").textContent = "";
+    }
+  </script>
+
+</head>
+<body>
+
+  <header>
+    KUSE Young Innovator Club
+  </header>
+
+  <nav>
+    <a href="index.html">หน้าหลัก</a>
+    <a href="about.html">เกี่ยวกับชุมนุม</a>
+    <a href="activities.html">กิจกรรม</a>
+    <a href="news.html">ประชาสัมพันธ์</a>
+    <a href="members.html">สมาชิก</a>
+    <a href="location.html">ติดต่อชุมนุม</a>
+    <a href="login.html">สำหรับเจ้าหน้าที่</a>
+  </nav>
+
+  <main>
+    <h2>หน้าเข้าสู่ระบบสำหรับเจ้าหน้าที่</h2>
+    <p>เนื้อหากำลังจะถูกเพิ่มเร็ว ๆ นี้</p>
+     <div id="pin-display"></div>
+    <div class="keypad">
+      <button onclick="pressKey('1')">1</button>
+      <button onclick="pressKey('2')">2</button>
+      <button onclick="pressKey('3')">3</button>
+      <button onclick="pressKey('4')">4</button>
+      <button onclick="pressKey('5')">5</button>
+      <button onclick="pressKey('6')">6</button>
+      <button onclick="pressKey('7')">7</button>
+      <button onclick="pressKey('8')">8</button>
+      <button onclick="pressKey('9')">9</button>
+      <button onclick="clearPin()">ล้าง</button>
+      <button onclick="pressKey('0')">0</button>
+    </div>
+    <p style="text-align:center;"><i>ป้อนรหัสผ่าน</i></p>
+  </main>
+
+</body>
+</html>

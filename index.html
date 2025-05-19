@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>หน้าหลัก</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>KUSE Young Innovator Club</header>
+
+    <nav>
+      <a href="index.html">หน้าหลัก</a>
+      <a href="about.html">เกี่ยวกับชุมนุม</a>
+      <a href="activities.html">กิจกรรม</a>
+      <a href="news.html">ประชาสัมพันธ์</a>
+      <a href="members.html">สมาชิก</a>
+      <a href="location.html">ติดต่อชุมนุม</a>
+      <a href="login.html">สำหรับเจ้าหน้าที่</a>
+    </nav>
+
+    <main>
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <img src="images/slide1.png" alt="กิจกรรม 1" />
+        </div>
+        <div class="slide fade">
+          <img src="images/slide3.jpg" alt="กิจกรรม 2" />
+        </div>
+        <div class="slide fade">
+          <img src="images/STEAM4INNOVATOR.jpg" alt="กิจกรรม 3" />
+        </div>
+      </div>
+
+      <div class="welcome-message">
+        <h2>Welcome To KUSE Young Innovator Club</h2>
+        <p>
+          KUSE Young Innovator Club
+          เป็นพื้นที่สำหรับนิสิตที่มีความสนใจด้านนวัตกรรม เทคโนโลยี
+          และการสร้างสรรค์สิ่งใหม่ ๆ มาร่วมเรียนรู้ แลกเปลี่ยน
+          และลงมือทำโครงการจริงกับเรา!
+        </p>
+      </div>
+
+      <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          let slides = document.getElementsByClassName("slide");
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          }
+          slides[slideIndex - 1].style.display = "block";
+          setTimeout(showSlides, 3000); // เปลี่ยนภาพทุก 3 วินาที
+        }
+      </script>
+      <p>เนื้อหากำลังจะถูกเพิ่มเร็ว ๆ นี้</p>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <img src="images/logo.png" alt="โลโก้ชุมนุม" class="footer-logo" />
+        <div class="footer-text">
+          <h3>KUSE Young Innovator Club</h3>
+          <p>
+            คณะวิทยาศาสตร์และวิศวกรรมศาสตร์<br />
+            
+            มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร<br />
+            Email: kuseyounginnovatorclub2024@gmail.com | Facebook: KUSE Young Innovator Club
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
